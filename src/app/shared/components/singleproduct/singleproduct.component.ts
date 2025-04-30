@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Iproduct } from '../../models/iproduct';
 import { ProductService } from '../../service/product.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { RemoverComponent } from '../remover/remover.component';
 
 @Component({
@@ -36,7 +36,10 @@ export class SingleproductComponent implements OnInit {
   }
 
   removeproduct() {
-    let res = this._matdilog.open(RemoverComponent);
+    let matconfig = new MatDialogConfig();
+    matconfig.data = `are you sure you want to remove ${this.pobject.pName}`;
+
+    let res = this._matdilog.open(RemoverComponent, matconfig);
 
     res.afterClosed().subscribe((res) => {
       if (res) {

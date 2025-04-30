@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Iuser } from '../../models/iuser';
 import { UserService } from '../../service/user.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { MatDialog } from '@angular/material/dialog';
 import { RemoverComponent } from '../remover/remover.component';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-singleuser',
@@ -39,7 +39,10 @@ export class SingleuserComponent implements OnInit {
   }
 
   removeuser() {
-    let res = this._matdilog.open(RemoverComponent);
+    let matref = new MatDialogConfig();
+    matref.data = `are you sure you want to remove ${this.userObj.userName} this user`;
+
+    let res = this._matdilog.open(RemoverComponent, matref);
 
     res.afterClosed().subscribe((res) => {
       if (res) {

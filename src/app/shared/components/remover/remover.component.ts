@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject, inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { config } from 'rxjs';
 
 @Component({
   selector: 'app-remover',
@@ -7,7 +8,13 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./remover.component.scss'],
 })
 export class RemoverComponent implements OnInit {
-  constructor(private _matref: MatDialogRef<RemoverComponent>) {}
+  matdata!: string;
+  constructor(
+    private _matref: MatDialogRef<RemoverComponent>,
+    @Inject(MAT_DIALOG_DATA) config: string
+  ) {
+    this.matdata = config;
+  }
 
   ngOnInit(): void {}
 
