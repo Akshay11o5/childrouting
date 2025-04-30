@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="card">
+    <div class="card-header">
+      <h2>{{ userObj.userName }}</h2>
+    </div>
+    <div class="card-body">
+      <strong>{{ userObj.userRole }}</strong>
+
+      Is the Userrole of user {{ userObj.userName }}
+    </div>
+
+    <div class="card-footer">
+      <div>
+        <button
+          mat-raised-button
+          color="primary"
+          class="mr-5"
+          routerLink="edit"
+          [queryParamsHandling]="'preserve'"
+        >
+          Edit
+        </button>
+        <button mat-raised-button color="warn" (click)="removeuser()">
+          Remove
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

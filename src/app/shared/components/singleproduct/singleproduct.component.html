@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="card">
+    <div class="card-header">
+      <h2>{{ pobject.pName }}</h2>
+    </div>
+    <div class="card-body">
+      <strong>{{ pobject.pStatus }}</strong>
+
+      This is the product Status of {{ pobject.pName }}
+    </div>
+
+    <div class="card-footer">
+      <div>
+        <button
+          mat-raised-button
+          color="primary"
+          class="mr-5"
+          routerLink="edit"
+        >
+          Edit
+        </button>
+        <button mat-raised-button color="warn" (click)="removeproduct()">
+          Remove
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="card">
+  <form [formGroup]="prodForm" (ngSubmit)="onsubmit()">
+    <div class="form-group">
+      <label for="pName">Product Name</label>
+      <input
+        type="text"
+        name="pName"
+        id="pName"
+        formControlName="pName"
+        class="form-control"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="pStatus">Product Status</label>
+      <select
+        type="text"
+        name="pStatus"
+        id="pStatus"
+        formControlName="pStatus"
+        class="form-control"
+      >
+        <option value="inprogress">Inprogress</option>
+        <option value="delivered">Delivered</option>
+        <option value="dispatch">Dispatch</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="canReturn">Can Return</label>
+      <select
+        type="text"
+        name="canReturn"
+        id="canReturn"
+        formControlName="canReturn"
+        class="form-control"
+      >
+        <option value="0">Yes</option>
+        <option value="1">No</option>
+      </select>
+    </div>
+
+    <div>
+      <button mat-raised-button color="accent" [disabled]="!prodForm.valid">
+        {{ Isineditmode ? "Update Product" : "Add Product" }}
+      </button>
+    </div>
+  </form>
+</div>

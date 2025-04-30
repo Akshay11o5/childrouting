@@ -1,0 +1,35 @@
+<div class="card">
+  <div>
+    <form [formGroup]="userform" (ngSubmit)="onsubmit()">
+      <div class="form-group">
+        <label for="userName">User Name</label>
+        <input
+          type="text"
+          id="userName"
+          formControlName="userName"
+          class="form-control"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="userRole">User Role</label>
+        <select
+          type="text"
+          id="userRole"
+          formControlName="userRole"
+          class="form-control"
+        >
+          <option value="candidate">Candidate</option>
+          <option value="superadmin">Superadmin</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
+
+      <div>
+        <button [disabled]="Isdiabled" mat-raised-button color="accent">
+          {{ Isineditmode ? "Update User" : "Add User" }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="row mb-4">
+  <div class="col-md-12 col-sm-12 btnn">
+    <button mat-raised-button color="accent" routerLink="addproduct">
+      Add Product
+    </button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-5 col-sm-5">
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let prod of productArr"
+        [routerLink]="prod.PId"
+      >
+        {{ prod.pName }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-md-7 col-sm-7">
+    <router-outlet></router-outlet>
+  </div>
+</div>
