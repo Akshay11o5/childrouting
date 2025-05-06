@@ -7,6 +7,10 @@ import { SingleuserComponent } from './shared/components/singleuser/singleuser.c
 import { ProductsComponent } from './shared/components/products/products.component';
 import { ProductformComponent } from './shared/components/productform/productform.component';
 import { SingleproductComponent } from './shared/components/singleproduct/singleproduct.component';
+import { FairdashbordComponent } from './shared/components/fairdashbord/fairdashbord.component';
+import { FairCardsComponent } from './shared/components/fairdashbord/fair-cards/fair-cards.component';
+import { FairDetailsComponent } from './shared/components/fairdashbord/fair-details/fair-details.component';
+import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -59,6 +63,27 @@ const routes: Routes = [
         component: ProductformComponent,
       },
     ],
+  },
+
+  {
+    path: 'fair',
+    component: FairdashbordComponent,
+    children: [
+      {
+        path: ':fairId',
+        component: FairDetailsComponent,
+      },
+    ],
+  },
+
+  {
+    path: 'page-not-found',
+    component: PageNotFoundComponent,
+  },
+
+  {
+    path: '**',
+    redirectTo: 'page-not-found',
   },
 ];
 

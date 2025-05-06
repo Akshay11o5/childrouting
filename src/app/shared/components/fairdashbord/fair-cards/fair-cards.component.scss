@@ -1,0 +1,28 @@
+.faircard {
+  background-image: linear-gradient(90deg, #f6c7cf 0%, #fa8699 100%);
+  color: black;
+  cursor: pointer;
+
+  .typeanddate {
+    background-color: rgb(250, 216, 221);
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+    border: 1px solid #fa8699;
+  }
+
+  &.active {
+    &::before {
+      content: "";
+      position: absolute;
+      height: 16px;
+      width: 16px;
+      background-color: rgb(242, 100, 100);
+      right: -8px;
+      top: calc(50% - 8px);
+      transform: rotate(45deg);
+      z-index: -1;
+    }
+  }
+}

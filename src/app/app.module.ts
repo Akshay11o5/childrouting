@@ -17,6 +17,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ProductsComponent } from './shared/components/products/products.component';
 import { SingleproductComponent } from './shared/components/singleproduct/singleproduct.component';
 import { ProductformComponent } from './shared/components/productform/productform.component';
+import { FairdashbordComponent } from './shared/components/fairdashbord/fairdashbord.component';
+import { FairCardsComponent } from './shared/components/fairdashbord/fair-cards/fair-cards.component';
+import { FairDetailsComponent } from './shared/components/fairdashbord/fair-details/fair-details.component';
+import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +34,10 @@ import { ProductformComponent } from './shared/components/productform/productfor
     ProductsComponent,
     SingleproductComponent,
     ProductformComponent,
+    FairdashbordComponent,
+    FairCardsComponent,
+    FairDetailsComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
